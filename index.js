@@ -16268,13 +16268,14 @@ var x = document.getElementById("activity");
 
 for(let i = 0; i<5421; i++){
   var li = document.createElement("li");
-  var button = document. createElement("button");
+  var button = document.createElement("button");
   button.innerHTML = "Copy";
   /*button.style.marginLeft = "5px"; 
   button.style.backgroundColor = "lightblue";*/
 
+  button.id = i ; 
   button.addEventListener("click", function() {
-    myFunction(data[i].quoteText+"\n\n#ParasChhabra\n#AsliFans\n#BB13OnVoot");
+    myFunction(data[i].quoteText+"\n\n#ParasChhabra\n#AsliFans\n#BB13OnVoot", i);
   });
   li.appendChild(document.createTextNode(i+1 + ". " + data[i].quoteText+"\n\n#ParasChhabra\n#AsliFans\n#BB13OnVoot"));
   li.appendChild(button);
@@ -16284,10 +16285,11 @@ for(let i = 0; i<5421; i++){
 var input = document.getElementById("name");
 
 
-function myFunction(text) {
+function myFunction(text, id) {
   var textArea = document.createElement("textarea");
 
-  console.log(input.value);
+  console.log(document.getElementById(id));
+
   // var val = input + " \n" + text;
   textArea.value = input.value + " \n" + text;
   document.body.appendChild(textArea);
@@ -16298,6 +16300,12 @@ function myFunction(text) {
   textArea.setSelectionRange(0, 99999)
   document.execCommand("copy");
   document.body.removeChild(textArea);
+
+  document.getElementById(id).innerHTML = "Copied";
+
+  setTimeout(function(){
+    document.getElementById(id).innerHTML = "Copy";
+  }, 1000)
 
   // alert("Copied");
 }

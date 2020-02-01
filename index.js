@@ -16281,9 +16281,15 @@ for(let i = 0; i<5421; i++){
   x.appendChild(li);
 }
 
+var input = document.getElementById("name");
+
+
 function myFunction(text) {
   var textArea = document.createElement("textarea");
-  textArea.value = text;
+
+  console.log(input.value);
+  // var val = input + " \n" + text;
+  textArea.value = input.value + " \n" + text;
   document.body.appendChild(textArea);
   textArea.style.position="fixed";
 

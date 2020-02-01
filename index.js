@@ -16264,10 +16264,34 @@ var data = [{
   }]
 
 
-  var x = document.getElementById("activity");
+var x = document.getElementById("activity");
 
-  for(let i = 0; i<5421; i++){
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode(i+1 + ". " + data[i].quoteText+"\n\n#ParasChhabra\n#AsliFans\n#BB13OnVoot"));
-    x.appendChild(li);
-  }
+for(let i = 0; i<5421; i++){
+  var li = document.createElement("li");
+  var button = document. createElement("button");
+  button.innerHTML = "Copy";
+  /*button.style.marginLeft = "5px"; 
+  button.style.backgroundColor = "lightblue";*/
+
+  button.addEventListener("click", function() {
+    myFunction(data[i].quoteText+"\n\n#ParasChhabra\n#AsliFans\n#BB13OnVoot");
+  });
+  li.appendChild(document.createTextNode(i+1 + ". " + data[i].quoteText+"\n\n#ParasChhabra\n#AsliFans\n#BB13OnVoot"));
+  li.appendChild(button);
+  x.appendChild(li);
+}
+
+function myFunction(text) {
+  var textArea = document.createElement("textarea");
+  textArea.value = text;
+  document.body.appendChild(textArea);
+  textArea.style.position="fixed";
+
+  textArea.focus();
+  textArea.select();
+  textArea.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.body.removeChild(textArea);
+
+  // alert("Copied");
+}

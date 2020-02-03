@@ -16266,7 +16266,16 @@ var data = [{
 
 var x = document.getElementById("activity");
 
+var qoutes = [];
 for(let i = 0; i<5421; i++){
+  if(qoutes.indexOf(data[i].quoteText) == -1){
+    qoutes.push(data[i].quoteText);
+  }
+}
+
+console.log(qoutes.length);
+
+for(let i = 0; i<1638; i++){
   var li = document.createElement("li");
   var button = document.createElement("button");
   button.innerHTML = "Copy";
@@ -16275,9 +16284,9 @@ for(let i = 0; i<5421; i++){
 
   button.id = i ; 
   button.addEventListener("click", function() {
-    myFunction(data[i].quoteText+"\n#FightBackParas", i);
+    myFunction(qoutes[i]+"\n\n#FightBackParas", i);
   });
-  li.appendChild(document.createTextNode(i+1 + ". " + data[i].quoteText+"\n#FightBackParas"));
+  li.appendChild(document.createTextNode(i+1 + ". " + qoutes[i]+"\n\n#FightBackParas"));
   li.appendChild(button);
   x.appendChild(li);
 }
@@ -16288,7 +16297,7 @@ var input = document.getElementById("name");
 function myFunction(text, id) {
   var textArea = document.createElement("textarea");
 
-  console.log(document.getElementById(id));
+  // console.log(document.getElementById(id));
 
   // var val = input + " \n" + text;
   textArea.value = input.value + " \n" + text;

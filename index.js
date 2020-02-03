@@ -16275,9 +16275,9 @@ for(let i = 0; i<5421; i++){
 
   button.id = i ; 
   button.addEventListener("click", function() {
-    myFunction(data[i].quoteText+"\n\n#ParasChhabra\n#AsliFans\n#BB13OnVoot", i);
+    myFunction(data[i].quoteText+"\n#FightBackParas", i);
   });
-  li.appendChild(document.createTextNode(i+1 + ". " + data[i].quoteText+"\n\n#ParasChhabra\n#AsliFans\n#BB13OnVoot"));
+  li.appendChild(document.createTextNode(i+1 + ". " + data[i].quoteText+"\n#FightBackParas"));
   li.appendChild(button);
   x.appendChild(li);
 }

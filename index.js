@@ -16266,7 +16266,17 @@ var data = [{
 
 var x = document.getElementById("activity");
 
-var qoutes = [];
+var qoutes = [
+  "People who fight fire with fire usually end up with ashes.",
+  "He is that good vibe that everyone desires around dem!!",
+  "The harder you work for something, the greater you’ll feel when you achieve it.",
+  "Keep away from people who belittle your ambitions. Small people do that, but the great ones make you feel that you can become great.",
+  "When you focus on wanting what you can't have, you fail to appreciate what's right in front of you.",
+  "What seems to us as bitter trials are often blessings in disguise.",
+  "Dream it. Believe it. Build it.",
+  "Many a man will have the courage to die gallantly, but will not have the courage to say, or even to think, that the cause for which he is asked to die is an unworthy one.",
+  "Let him that is without stone among you cast the first thing he can lay his hands on."
+];
 for(let i = 0; i<5421; i++){
   if(qoutes.indexOf(data[i].quoteText) == -1){
     qoutes.push(data[i].quoteText);
@@ -16284,9 +16294,9 @@ for(let i = 0; i<1638; i++){
 
   button.id = i ; 
   button.addEventListener("click", function() {
-    myFunction(qoutes[i]+"\n\n#FightBackParas", i);
+    myFunction(qoutes[i]+"\n\n#ParasSabkaThreat", i);
   });
-  li.appendChild(document.createTextNode(i+1 + ". " + qoutes[i]+"\n\n#FightBackParas"));
+  li.appendChild(document.createTextNode(i+1 + ". " + qoutes[i]+"\n\n#ParasSabkaThreat"));
   li.appendChild(button);
   x.appendChild(li);
 }

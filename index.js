@@ -16294,9 +16294,9 @@ for(let i = 0; i<1638; i++){
 
   button.id = i ; 
   button.addEventListener("click", function() {
-    myFunction(qoutes[i]+"\nRKV TOP GOOGLED IN BB", i);
+    myFunction(qoutes[i]+"\nBB14 MOST GOOGLED RKV", i);
   });
-  li.appendChild(document.createTextNode(i+1 + ". " + qoutes[i] +"\nRKV TOP GOOGLED IN BB"));
+  li.appendChild(document.createTextNode(i+1 + ". " + qoutes[i] +"\nBB14 MOST GOOGLED RKV"));
   li.appendChild(button);
   x.appendChild(li);
 }
